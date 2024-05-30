@@ -1,7 +1,7 @@
 package space.jiguanchen.product;
 
-import space.jiguanchen.product.factory.PowerPredictionModel;
-import space.jiguanchen.product.factory.PowerPredictionModelFactory;
+import space.jiguanchen.product.factory.model.PowerPredictionModel;
+import space.jiguanchen.product.factory.easyFactory.PowerPredictionModelFactory;
 
 /**
  * @Description: 工厂模式启动类
