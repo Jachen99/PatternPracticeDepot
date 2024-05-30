@@ -1,4 +1,7 @@
-package space.jiguanchen.FactoryBuilder;
+package space.jiguanchen.product;
+
+import space.jiguanchen.product.factory.PowerPredictionModel;
+import space.jiguanchen.product.factory.PowerPredictionModelFactory;
 
 /**
  * @Description: 工厂模式启动类
@@ -22,5 +25,7 @@ public class FactoryBuilderMain {
         PowerPredictionModel hydroModel = factory.createPowerPredictionModel("hydro");
         double hydroPower = hydroModel.predictPower();
         System.out.println("水力能预测电力产量：" + hydroPower + "千瓦时");
+
+        System.out.println("================end===============");
     }
 }

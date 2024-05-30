@@ -1,4 +1,4 @@
-package space.jiguanchen.FactoryBuilder;
+package space.jiguanchen.product.factory;
 
 /**
  * @Description: 抽象能源预测模型接口

@@ -1,4 +1,4 @@
-package space.jiguanchen.FactoryBuilder;
+package space.jiguanchen.product.factory;
 
 
 /**
