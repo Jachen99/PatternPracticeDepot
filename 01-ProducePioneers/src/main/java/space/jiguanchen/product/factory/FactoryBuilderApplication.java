@@ -1,4 +1,4 @@
-package space.jiguanchen.product;
+package space.jiguanchen.product.factory;
 
 import space.jiguanchen.product.factory.model.PowerPredictionModel;
 import space.jiguanchen.product.factory.easyFactory.PowerPredictionModelFactory;
@@ -8,7 +8,7 @@ import space.jiguanchen.product.factory.easyFactory.PowerPredictionModelFactory;
  * @Auther: jiguanchen
  * @Date: 2023/9/12 15:49
  */
-public class FactoryBuilderMain {
+public class FactoryBuilderApplication {
     public static void main(String[] args) {
         System.out.println("================start===============");
 
