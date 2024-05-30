@@ -1,4 +1,4 @@
-package space.jiguanchen.product;
+package space.jiguanchen.product.factory;
 
 import space.jiguanchen.product.factory.abstractFactory.HydroPowerPredictionModelFactory;
 import space.jiguanchen.product.factory.abstractFactory.PowerPredictionModelFactory;
@@ -11,7 +11,7 @@ import space.jiguanchen.product.factory.model.PowerPredictionModel;
  * @Author: jiguanchen
  * @Date: 2024/5/30 16:18
  */
-public class AbstractFactoryBuilderMain {
+public class AbstractFactoryBuilderApplication {
     public static void main(String[] args) {
         System.out.println("================start===============");
 
