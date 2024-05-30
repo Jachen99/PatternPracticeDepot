@@ -1,7 +1,10 @@
 package space.jiguanchen.product.factory.easyFactory;
 
 
+import space.jiguanchen.product.factory.model.HydroPowerPredictionModel;
 import space.jiguanchen.product.factory.model.PowerPredictionModel;
+import space.jiguanchen.product.factory.model.SolarPowerPredictionModel;
+import space.jiguanchen.product.factory.model.WindPowerPredictionModel;
 
 /**
  * @Description: 能源预测模型工厂

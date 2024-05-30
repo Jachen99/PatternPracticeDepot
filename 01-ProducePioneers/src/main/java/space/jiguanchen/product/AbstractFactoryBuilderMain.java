@@ -32,5 +32,6 @@ public class AbstractFactoryBuilderMain {
         PowerPredictionModel hydroModel = hydroFactory.createPowerPredictionModel();
         double hydroPower = hydroModel.predictPower();
         System.out.println("水力能预测电力产量：" + hydroPower + "千瓦时");
+        System.out.println("================end===============");
     }
 }
