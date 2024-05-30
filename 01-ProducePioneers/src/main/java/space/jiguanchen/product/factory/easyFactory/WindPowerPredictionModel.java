@@ -1,4 +1,6 @@
-package space.jiguanchen.product.factory;
+package space.jiguanchen.product.factory.easyFactory;
+
+import space.jiguanchen.product.factory.model.PowerPredictionModel;
 
 /**
  * @Description: 风能预测模型

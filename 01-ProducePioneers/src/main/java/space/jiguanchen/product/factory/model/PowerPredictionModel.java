@@ -1,4 +1,4 @@
-package space.jiguanchen.product.factory;
+package space.jiguanchen.product.factory.model;
 
 /**
  * @Description: 抽象能源预测模型接口
@@ -7,6 +7,11 @@ package space.jiguanchen.product.factory;
  */
 public interface PowerPredictionModel {
 
+    /**
+     * 预测能源产量
+     *
+     * @return 预测的能源产量（千瓦时）
+     */
     double predictPower();
 
 }

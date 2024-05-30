@@ -1,9 +1,9 @@
-package space.jiguanchen.product.factory;
+package space.jiguanchen.product.factory.model;
 
 /**
  * @Description: 太阳能预测模型
- * @Auther: jiguanchen
- * @Date: 2023/9/12 17:29
+ * @Author: jiguanchen
+ * @Date: 2024/5/30 16:30
  */
 public class SolarPowerPredictionModel implements PowerPredictionModel {
     @Override
