@@ -1,0 +1,37 @@
+target/
+logs/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+log.path_IS_UNDEFINED
+LOG_HOME_IS_UNDEFINED
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+src/main/resources/docker/
+src/test/
+site/
+src/main/java/com/tsingsoft/admin/utils/
