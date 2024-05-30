@@ -8,11 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ProducePioneers" />
+        <module name="03-BehaviorBridges" />
+        <module name="01-ProducePioneers" />
         <module name="StructureCrafters" />
-        <module name="BehaviorBridges" />
+        <module name="02-StructureCrafters" />
         <module name="Common" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel>
+      <module name="BehaviorBridges" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
