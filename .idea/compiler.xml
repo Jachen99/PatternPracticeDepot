@@ -8,15 +8,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ProducePioneers" />
-        <module name="03-BehaviorBridges" />
-        <module name="01-ProducePioneers" />
         <module name="StructureCrafters" />
         <module name="02-StructureCrafters" />
+        <module name="03-BehaviorBridges" />
+        <module name="01-ProducePioneers" />
+      </profile>
+      <profile name="Annotation profile for Common" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="D:/maven/myMaven/org/projectlombok/lombok/1.18.28/lombok-1.18.28.jar" />
+        </processorPath>
         <module name="Common" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="BehaviorBridges" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
