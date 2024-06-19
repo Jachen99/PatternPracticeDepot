@@ -1,4 +1,4 @@
-package space.jiguanchen.product.myFactory;
+package space.jiguanchen.product.factory.myFactory;
 
 /**
  * @Description: TenAheadModelFactory 接口，定义创建 TenAheadModel 的工厂方法

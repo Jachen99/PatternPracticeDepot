@@ -1,4 +1,4 @@
-package space.jiguanchen.product.myFactory;
+package space.jiguanchen.product.factory.myFactory;
 
 /**
  * @Description: 继续工作模型的工厂类

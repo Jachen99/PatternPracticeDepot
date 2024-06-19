@@ -1,4 +1,4 @@
-package space.jiguanchen.product.myFactory;
+package space.jiguanchen.product.factory.myFactory;
 
 import lombok.extern.slf4j.Slf4j;
 

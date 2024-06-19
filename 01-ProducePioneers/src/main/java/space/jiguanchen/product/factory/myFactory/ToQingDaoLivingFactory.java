@@ -1,4 +1,4 @@
-package space.jiguanchen.product.myFactory;
+package space.jiguanchen.product.factory.myFactory;
 
 /**
  * @Description: 去青岛生活模型的工厂类

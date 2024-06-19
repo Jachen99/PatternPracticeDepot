@@ -1,4 +1,4 @@
-package space.jiguanchen.product.myFactory;
+package space.jiguanchen.product.factory.myFactory;
 
 /**
  * @Description: TenAheadModel 接口，定义十年后生活的模型方法
