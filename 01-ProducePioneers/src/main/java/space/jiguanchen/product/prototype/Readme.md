@@ -18,87 +18,89 @@ Client（客户端）：通过调用原型对象的克隆方法来创建新的�
 ```java
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  * 示例代码  假设我们要创建一个复杂的图形对象，这个图形对象包含多个子图形。使用原型模式可以简化这个过程。
  */
 
 // 原型接口
 interface Shape extends Cloneable {
-Shape clone();
-void draw();
+   Shape clone();
+
+   void draw();
 }
 
 // 具体原型类 - 圆形
 class Circle implements Shape {
-private int radius;
+   private int radius;
 
-    public Circle(int radius) {
-        this.radius = radius;
-    }
+   public Circle(int radius) {
+      this.radius = radius;
+   }
 
-    @Override
-    public Shape clone() {
-        return new Circle(this.radius);
-    }
+   @Override
+   public Shape clone() {
+      return new Circle(this.radius);
+   }
 
-    @Override
-    public void draw() {
-        System.out.println("Drawing a Circle with radius " + radius);
-    }
+   @Override
+   public void draw() {
+      System.out.println("Drawing a Circle with radius " + radius);
+   }
 }
 
 // 具体原型类 - 矩形
 class Rectangle implements Shape {
-private int width;
-private int height;
+   private int width;
+   private int height;
 
-    public Rectangle(int width, int height) {
-        this.width = width;
-        this.height = height;
-    }
+   public Rectangle(int width, int height) {
+      this.width = width;
+      this.height = height;
+   }
 
-    @Override
-    public Shape clone() {
-        return new Rectangle(this.width, this.height);
-    }
+   @Override
+   public Shape clone() {
+      return new Rectangle(this.width, this.height);
+   }
 
-    @Override
-    public void draw() {
-        System.out.println("Drawing a Rectangle with width " + width + " and height " + height);
-    }
+   @Override
+   public void draw() {
+      System.out.println("Drawing a Rectangle with width " + width + " and height " + height);
+   }
 }
 
 // 原型管理器
 class ShapePrototypeManager {
-private Map<String, Shape> shapeMap = new HashMap<>();
+   private Map<String, Shape> shapeMap = new HashMap<>();
 
-    public void registerShape(String key, Shape shape) {
-        shapeMap.put(key, shape);
-    }
+   public void registerShape(String key, Shape shape) {
+      shapeMap.put(key, shape);
+   }
 
-    public Shape getShape(String key) {
-        Shape shape = shapeMap.get(key);
-        return shape.clone();
-    }
+   public Shape getShape(String key) {
+      Shape shape = shapeMap.get(key);
+      return shape.clone();
+   }
 }
 
 // 客户端代码
 public class Client {
-public static void main(String[] args) {
-ShapePrototypeManager prototypeManager = new ShapePrototypeManager();
+   public static void main(String[] args) {
+      ShapePrototypeManager prototypeManager = new ShapePrototypeManager();
 
-        // 注册原型
-        prototypeManager.registerShape("Circle", new Circle(5));
-        prototypeManager.registerShape("Rectangle", new Rectangle(10, 20));
+      // 注册原型
+      prototypeManager.registerShape("Circle", new Circle(5));
+      prototypeManager.registerShape("Rectangle", new Rectangle(10, 20));
 
-        // 克隆原型
-        Shape clonedCircle = prototypeManager.getShape("Circle");
-        Shape clonedRectangle = prototypeManager.getShape("Rectangle");
+      // 克隆原型
+      Shape clonedCircle = prototypeManager.getShape("Circle");
+      Shape clonedRectangle = prototypeManager.getShape("Rectangle");
 
-        // 使用克隆对象
-        clonedCircle.draw();
-        clonedRectangle.draw();
-    }
+      // 使用克隆对象
+      clonedCircle.draw();
+      clonedRectangle.draw();
+   }
 }
 ```
 生活中的实例
