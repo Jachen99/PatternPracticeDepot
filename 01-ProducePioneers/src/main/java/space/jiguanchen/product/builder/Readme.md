@@ -131,9 +131,15 @@ public class Client {
     }
 }
 ```
-Computer： 产品类，表示要构建的复杂对象。
-ComputerBuilder： 抽象建造者接口，定义了构建产品各个部件的方法。
-HighEndComputerBuilder 和 LowEndComputerBuilder： 具体建造者实现类，负责实现具体产品各个部件的构建和装配。
-Director： 指挥者类，负责调用具体建造者来构建产品。
-Client： 客户端代码，演示如何使用建造者模式来构建不同配置的电脑对象。
+
+**Computer**：产品类，表示要构建的复杂对象。
+
+**ComputerBuilder**：抽象建造者接口，定义了构建产品各个部件的方法。
+
+**HighEndComputerBuilder 和 LowEndComputerBuilder**：具体建造者实现类，负责实现具体产品各个部件的构建和装配。
+
+**Director**：指挥者类，负责调用具体建造者来构建产品。
+
+**Client**：客户端代码，演示如何使用建造者模式来构建不同配置的电脑对象。
+
 建造者模式通过将复杂对象的构建过程分解成多个简单步骤，使得客户端代码可以根据需求选择不同的建造者来构建不同配置的产品。这样既保证了构建过程的灵活性和复用性，又隐藏了产品内部构建细节，符合面向对象设计的开闭原则。
