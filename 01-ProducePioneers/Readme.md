@@ -1,4 +1,4 @@
-# 创建型模式 
+# 创建型模式
 创建型模式主要关注对象的创建过程，目的是将对象的创建和使用分离，提升代码的灵活性和可扩展性。（提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用 new 运算符直接实例化对象）
 
 ## 工厂模式（Factory Pattern）
@@ -55,17 +55,16 @@ public class Client {
 
 ```
 ## 抽象工厂模式（Abstract Factory Pattern）
+
 抽象工厂模式是一种创建型设计模式，它提供一个接口，用于创建一系列相关或相互依赖的对象，而无需指定它们具体的类。抽象工厂模式通常用于生产“产品族”，即一系列相关的产品对象，这些产品对象可能在某种上下文或某个场景下一起使用。
 
 抽象工厂模式的主要参与者包括：
 
-抽象工厂（Abstract Factory）：声明创建一系列相关产品对象的方法。
-具体工厂（Concrete Factory）：实现创建产品对象的方法。
-抽象产品（Abstract Product）：为一类产品对象声明接口。
-具体产品（Concrete Product）：定义具体工厂生产的具体产品对象，实现抽象产品接口。
-客户端（Client）：使用抽象工厂来创建一组相关的产品。
-示例代码
-假设我们要创建一个界面组件库，有两套不同风格的组件：Windows风格和Mac风格。我们将使用抽象工厂模式来实现。
+- **抽象工厂（Abstract Factory）**：声明创建一系列相关产品对象的方法。
+- **具体工厂（Concrete Factory）**：实现创建产品对象的方法。
+- **抽象产品（Abstract Product）**：为一类产品对象声明接口。
+- **具体产品（Concrete Product）**：定义具体工厂生产的具体产品对象，实现抽象产品接口。
+- **客户端（Client）**：使用抽象工厂来创建一组相关的产品。
 
 抽象产品
 ```java
@@ -188,18 +187,16 @@ public class Client {
 ```
 抽象工厂模式通过提供一个接口来创建一系列相关或相互依赖的对象，从而使客户端代码与这些对象的创建过程解耦。这样，当需要更换一组相关产品时，只需要更换具体工厂类，而无需修改客户端代码。抽象工厂模式的优点是使得代码更加灵活和可扩展，能够方便地添加新的产品族。
 
-## 单例模式（Singleton Pattern）
 
+## 单例模式（Singleton Pattern）
 
 单例模式（Singleton Pattern）是一种创建型设计模式，它确保一个类只有一个实例，并提供一个全局访问点来访问该实例。单例模式通常用于需要全局唯一对象的场景，例如配置管理对象、线程池、日志对象等。
 
 单例模式的实现主要包含以下几个关键点：
 
-私有化构造函数：防止外部通过构造函数创建实例。
-持有自己类的唯一实例：通过静态成员变量持有单例实例。
-提供一个公开的静态方法：用于获取唯一实例。
-单例模式的实现方式
-单例模式有多种实现方式，下面介绍几种常见的实现方式。
+**私有化构造函数**：防止外部通过构造函数创建实例。
+**持有自己类的唯一实例**：通过静态成员变量持有单例实例。
+**提供一个公开的静态方法**：用于获取唯一实例。
 
 1. 饿汉式单例（Eager Initialization）
    这种实现方式在类加载时就创建单例实例，线程安全，但可能造成资源浪费。
@@ -319,158 +316,165 @@ INSTANCE;
 }
 
 ```
-单例模式的优缺点
-优点：
-确保系统中只有一个实例，节省资源。
-提供全局访问点，方便管理。
-缺点：
-不适合对资源消耗较大的对象使用，因为即使不使用，实例也会一直存在。
-在多线程环境中实现难度较大，需要注意线程安全问题。
+### 单例模式的优缺点
 
-适用场景
-需要唯一实例的场景，如配置类、数据库连接池、日志类等。
-需要控制资源访问的场景，如线程池、缓存等。
-单例模式通过限制实例化次数和提供全局访问点，确保一个类只有一个实例，并可以方便地在不同地方使用这个实例。
+**优点：**
+- 确保系统中只有一个实例，节省资源。
+- 提供全局访问点，方便管理。
+
+**缺点：**
+- 不适合对资源消耗较大的对象使用，因为即使不使用，实例也会一直存在。
+- 在多线程环境中实现难度较大，需要注意线程安全问题。
+
+### 适用场景
+
+单例模式适用于需要确保唯一实例且提供全局访问点的场景，如配置类、数据库连接池、日志类等。它通过限制实例化次数和提供全局访问点，确保一个类只有一个实例，并可以方便地在不同地方使用这个实例。
+
+
 
 ## 建造者模式（Builder Pattern）
 建造者模式是一种创建型设计模式，用于通过多个简单的对象构建一个复杂的对象。它允许按步骤创建对象，将复杂对象的构建过程和表示分离，从而使同样的构建过程可以创建不同的表示。
 
-主要参与者
-Builder（建造者）：定义构建产品各个部件的抽象接口。
-ConcreteBuilder（具体建造者）：实现Builder接口，构建和装配各个部件。
-Director（指挥者）：负责调用具体建造者，按照一定的顺序来构建产品。
-Product（产品）：最终构建出的复杂对象。
-优点
-分步构建：将构建逻辑分解到单独的步骤中，使得构建过程更加灵活，可以按需组合和构建对象。
-隐藏复杂性：客户端不需要知道产品内部构建细节，只需通过指挥者按步骤来构建即可。
-重用性：可以复用相同的构建过程来创建不同的表示。
-示例代码
+### 主要参与者
+- **Builder（建造者）：** 定义构建产品各个部件的抽象接口。
+- **ConcreteBuilder（具体建造者）：** 实现Builder接口，构建和装配各个部件。
+- **Director（指挥者）：** 负责调用具体建造者，按照一定的顺序来构建产品。
+- **Product（产品）：** 最终构建出的复杂对象。
+
+### 优点
+- **分步构建：** 将构建逻辑分解到单独的步骤中，使得构建过程更加灵活，可以按需组合和构建对象。
+- **隐藏复杂性：** 客户端不需要知道产品内部构建细节，只需通过指挥者按步骤来构建即可。
+- **重用性：** 可以复用相同的构建过程来创建不同的表示。
+
+### 示例代码
 假设我们要构建一个电脑对象，包含CPU、内存和硬盘等组件，以下是建造者模式的示例代码：
 
 ```java
 // 产品类 - 电脑
 class Computer {
-   private String cpu;
-   private String memory;
-   private String hardDisk;
+    private String cpu;
+    private String memory;
+    private String hardDisk;
 
-   public void setCpu(String cpu) {
-      this.cpu = cpu;
-   }
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
 
-   public void setMemory(String memory) {
-      this.memory = memory;
-   }
+    public void setMemory(String memory) {
+        this.memory = memory;
+    }
 
-   public void setHardDisk(String hardDisk) {
-      this.hardDisk = hardDisk;
-   }
+    public void setHardDisk(String hardDisk) {
+        this.hardDisk = hardDisk;
+    }
 
-   @Override
-   public String toString() {
-      return "Computer{" +
-              "cpu='" + cpu + '\'' +
-              ", memory='" + memory + '\'' +
-              ", hardDisk='" + hardDisk + '\'' +
-              '}';
-   }
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "cpu='" + cpu + '\'' +
+                ", memory='" + memory + '\'' +
+                ", hardDisk='" + hardDisk + '\'' +
+                '}';
+    }
 }
 
 // 抽象建造者接口
 interface ComputerBuilder {
-   void buildCPU();
-
-   void buildMemory();
-
-   void buildHardDisk();
-
-   Computer getComputer();
+    void buildCPU();
+    void buildMemory();
+    void buildHardDisk();
+    Computer getComputer();
 }
 
 // 具体建造者 - 高配版电脑
 class HighEndComputerBuilder implements ComputerBuilder {
-   private Computer computer = new Computer();
+    private Computer computer = new Computer();
 
-   @Override
-   public void buildCPU() {
-      computer.setCpu("Intel i7");
-   }
+    @Override
+    public void buildCPU() {
+        computer.setCpu("Intel i7");
+    }
 
-   @Override
-   public void buildMemory() {
-      computer.setMemory("16GB DDR4");
-   }
+    @Override
+    public void buildMemory() {
+        computer.setMemory("16GB DDR4");
+    }
 
-   @Override
-   public void buildHardDisk() {
-      computer.setHardDisk("512GB SSD");
-   }
+    @Override
+    public void buildHardDisk() {
+        computer.setHardDisk("512GB SSD");
+    }
 
-   @Override
-   public Computer getComputer() {
-      return computer;
-   }
+    @Override
+    public Computer getComputer() {
+        return computer;
+    }
 }
 
 // 具体建造者 - 低配版电脑
 class LowEndComputerBuilder implements ComputerBuilder {
-   private Computer computer = new Computer();
+    private Computer computer = new Computer();
 
-   @Override
-   public void buildCPU() {
-      computer.setCpu("Intel i3");
-   }
+    @Override
+    public void buildCPU() {
+        computer.setCpu("Intel i3");
+    }
 
-   @Override
-   public void buildMemory() {
-      computer.setMemory("8GB DDR4");
-   }
+    @Override
+    public void buildMemory() {
+        computer.setMemory("8GB DDR4");
+    }
 
-   @Override
-   public void buildHardDisk() {
-      computer.setHardDisk("256GB SSD");
-   }
+    @Override
+    public void buildHardDisk() {
+        computer.setHardDisk("256GB SSD");
+    }
 
-   @Override
-   public Computer getComputer() {
-      return computer;
-   }
+    @Override
+    public Computer getComputer() {
+        return computer;
+    }
 }
 
 // 指挥者
 class Director {
-   public void construct(ComputerBuilder builder) {
-      builder.buildCPU();
-      builder.buildMemory();
-      builder.buildHardDisk();
-   }
+    public void construct(ComputerBuilder builder) {
+        builder.buildCPU();
+        builder.buildMemory();
+        builder.buildHardDisk();
+    }
 }
 
 // 客户端代码
 public class Client {
-   public static void main(String[] args) {
-      Director director = new Director();
+    public static void main(String[] args) {
+        Director director = new Director();
 
-      ComputerBuilder highEndBuilder = new HighEndComputerBuilder();
-      director.construct(highEndBuilder);
-      Computer highEndComputer = highEndBuilder.getComputer();
-      System.out.println("高配版电脑配置：" + highEndComputer);
+        ComputerBuilder highEndBuilder = new HighEndComputerBuilder();
+        director.construct(highEndBuilder);
+        Computer highEndComputer = highEndBuilder.getComputer();
+        System.out.println("高配版电脑配置：" + highEndComputer);
 
-      ComputerBuilder lowEndBuilder = new LowEndComputerBuilder();
-      director.construct(lowEndBuilder);
-      Computer lowEndComputer = lowEndBuilder.getComputer();
-      System.out.println("低配版电脑配置：" + lowEndComputer);
-   }
+        ComputerBuilder lowEndBuilder = new LowEndComputerBuilder();
+        director.construct(lowEndBuilder);
+        Computer lowEndComputer = lowEndBuilder.getComputer();
+        System.out.println("低配版电脑配置：" + lowEndComputer);
+    }
 }
 ```
-Computer：产品类，表示要构建的复杂对象。
-ComputerBuilder：抽象建造者接口，定义了构建产品各个部件的方法。
-HighEndComputerBuilder 和 LowEndComputerBuilder：具体建造者实现类，负责实现具体产品各个部件的构建和装配。
-Director：指挥者类，负责调用具体建造者来构建产品。
-Client：客户端代码，演示如何使用建造者模式来构建不同配置的电脑对象。
 
-建造者模式通过将复杂对象的构建过程分解成多个简单步骤，使得客户端代码可以根据需求选择不同的建造者来构建不同配置的产品。
-这样既保证了构建过程的灵活性和复用性，又隐藏了产品内部构建细节，符合面向对象设计的开闭原则。
+**Computer**：产品类，表示要构建的复杂对象。
+
+**ComputerBuilder**：抽象建造者接口，定义了构建产品各个部件的方法。
+
+**HighEndComputerBuilder 和 LowEndComputerBuilder**：具体建造者实现类，负责实现具体产品各个部件的构建和装配。
+
+**Director**：指挥者类，负责调用具体建造者来构建产品。
+
+**Client**：客户端代码，演示如何使用建造者模式来构建不同配置的电脑对象。
+
+建造者模式通过将复杂对象的构建过程分解成多个简单步骤，使得客户端代码可以根据需求选择不同的建造者来构建不同配置的产品。这样既保证了构建过程的灵活性和复用性，又隐藏了产品内部构建细节，符合面向对象设计的开闭原则。
+
 
 ## 原型模式（Prototype Pattern）
 
@@ -487,89 +491,89 @@ Client（客户端）：通过调用原型对象的克隆方法来创建新的�
 灵活性：可以在运行时动态地创建对象的副本，而不必依赖于具体类。
 
 ```java
-import java.util.HashMap;
-import java.util.Map;
+
 /**
  * 示例代码  假设我们要创建一个复杂的图形对象，这个图形对象包含多个子图形。使用原型模式可以简化这个过程。
  */
 
 // 原型接口
 interface Shape extends Cloneable {
-Shape clone();
-void draw();
+   Shape clone();
+
+   void draw();
 }
 
 // 具体原型类 - 圆形
 class Circle implements Shape {
-private int radius;
+   private int radius;
 
-    public Circle(int radius) {
-        this.radius = radius;
-    }
+   public Circle(int radius) {
+      this.radius = radius;
+   }
 
-    @Override
-    public Shape clone() {
-        return new Circle(this.radius);
-    }
+   @Override
+   public Shape clone() {
+      return new Circle(this.radius);
+   }
 
-    @Override
-    public void draw() {
-        System.out.println("Drawing a Circle with radius " + radius);
-    }
+   @Override
+   public void draw() {
+      System.out.println("Drawing a Circle with radius " + radius);
+   }
 }
 
 // 具体原型类 - 矩形
 class Rectangle implements Shape {
-private int width;
-private int height;
+   private int width;
+   private int height;
 
-    public Rectangle(int width, int height) {
-        this.width = width;
-        this.height = height;
-    }
+   public Rectangle(int width, int height) {
+      this.width = width;
+      this.height = height;
+   }
 
-    @Override
-    public Shape clone() {
-        return new Rectangle(this.width, this.height);
-    }
+   @Override
+   public Shape clone() {
+      return new Rectangle(this.width, this.height);
+   }
 
-    @Override
-    public void draw() {
-        System.out.println("Drawing a Rectangle with width " + width + " and height " + height);
-    }
+   @Override
+   public void draw() {
+      System.out.println("Drawing a Rectangle with width " + width + " and height " + height);
+   }
 }
 
 // 原型管理器
 class ShapePrototypeManager {
-private Map<String, Shape> shapeMap = new HashMap<>();
+   private Map<String, Shape> shapeMap = new HashMap<>();
 
-    public void registerShape(String key, Shape shape) {
-        shapeMap.put(key, shape);
-    }
+   public void registerShape(String key, Shape shape) {
+      shapeMap.put(key, shape);
+   }
 
-    public Shape getShape(String key) {
-        Shape shape = shapeMap.get(key);
-        return shape.clone();
-    }
+   public Shape getShape(String key) {
+      Shape shape = shapeMap.get(key);
+      return shape.clone();
+   }
 }
 
 // 客户端代码
 public class Client {
-public static void main(String[] args) {
-ShapePrototypeManager prototypeManager = new ShapePrototypeManager();
+   public static void main(String[] args) {
+      ShapePrototypeManager prototypeManager = new ShapePrototypeManager();
 
-        // 注册原型
-        prototypeManager.registerShape("Circle", new Circle(5));
-        prototypeManager.registerShape("Rectangle", new Rectangle(10, 20));
+      // 注册原型
+      prototypeManager.registerShape("Circle", new Circle(5));
+      prototypeManager.registerShape("Rectangle", new Rectangle(10, 20));
 
-        // 克隆原型
-        Shape clonedCircle = prototypeManager.getShape("Circle");
-        Shape clonedRectangle = prototypeManager.getShape("Rectangle");
+      // 克隆原型
+      Shape clonedCircle = prototypeManager.getShape("Circle");
+      Shape clonedRectangle = prototypeManager.getShape("Rectangle");
 
-        // 使用克隆对象
-        clonedCircle.draw();
-        clonedRectangle.draw();
-    }
+      // 使用克隆对象
+      clonedCircle.draw();
+      clonedRectangle.draw();
+   }
 }
 ```
 ### 主要参与者
