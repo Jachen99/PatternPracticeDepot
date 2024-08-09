@@ -6,7 +6,7 @@
 
     <groupId>space.jiguanchen</groupId>
     <artifactId>Common</artifactId>
-    <version>V20240530-SNAPSHOT</version>
+    <version>V20240831-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
