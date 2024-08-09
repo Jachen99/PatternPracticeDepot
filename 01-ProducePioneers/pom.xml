@@ -6,7 +6,7 @@
 
     <groupId>space.jiguanchen</groupId>
     <artifactId>01-ProducePioneers</artifactId>
-    <version>V20240530-SNAPSHOT</version>
+    <version>V20240831-SNAPSHOT</version>
 
 
     <dependencies>
@@ -14,7 +14,7 @@
         <dependency>
             <groupId>space.jiguanchen</groupId>
             <artifactId>Common</artifactId>
-            <version>V20240530-SNAPSHOT</version>
+            <version>V20240831-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
